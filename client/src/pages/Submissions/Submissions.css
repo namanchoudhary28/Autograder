@@ -1,0 +1,44 @@
+.submissions-page {
+  padding: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+th {
+  background: #f8fafc;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.AC {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.WA,
+.status.RE,
+.status.TLE {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.status.QUEUED,
+.status.RUNNING {
+  background: #e0e7ff;
+  color: #3730a3;
+}

@@ -1,0 +1,41 @@
+.problems-container {
+  padding: 24px;
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr {
+  cursor: pointer;
+}
+
+tr:hover {
+  background: #f5f6fa;
+}
+
+.diff.easy {
+  color: green;
+}
+
+.diff.medium {
+  color: orange;
+}
+
+.diff.hard {
+  color: red;
+}
+
+.center {
+  text-align: center;
+}
