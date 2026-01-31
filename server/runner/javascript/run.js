@@ -1,19 +1,24 @@
+const { spawn } = require("child_process");
 const fs = require("fs");
 
-try {
-  if (!fs.existsSync("/code/code.js")) {
-    throw new Error("code.js not found");
-  }
-
-  const input = fs.readFileSync("/code/input.txt", "utf8");
-  process.stdin.push(input);
-  process.stdin.push(null);
-
-  delete require.cache[require.resolve("/code/code.js")];
-  require("/code/code.js");
-
-  process.exit(0);
-} catch (err) {
-  console.error(err.toString());
+if (!fs.existsSync("/code/code.js")) {
+  console.error("code.js not found");
   process.exit(1);
 }
+
+// run user code as isolated process
+const child = spawn("node", ["/code/code.js"], {
+  stdio: ["pipe", "inherit", "inherit"],
+});
+
+// pipe test input → REAL stdin
+if (fs.existsSync("/code/input.txt")) {
+  fs.createReadStream("/code/input.txt").pipe(child.stdin);
+} else {
+  child.stdin.end();
+}
+
+// exit runner when user program finishes
+child.on("exit", (code) => {
+  process.exit(code);
+});
