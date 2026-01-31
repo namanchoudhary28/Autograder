@@ -5,8 +5,8 @@ const os = require("os");
 
 exports.runInDocker = (submissionId, code, input,language) => {
   const RUNNER_IMAGE = {
-  javascript: "naman246/js-runner:latest",
-  python: "naman246/python-runner:latest"
+  javascript: "js-runner",
+  python: "python-runner"
 };
 
   // Use home directory instead of /tmp for Docker Desktop compatibility
