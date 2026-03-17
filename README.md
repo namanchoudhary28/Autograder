@@ -129,7 +129,7 @@ Current system uses **in-process async execution**, but architecture is designed
 ## 📄 Detailed System Design
 
 👉 For complete architecture, trade-offs, and deep dive:
-**[View Full System Design Documentation](./SYSTEM_DESIGN.md)**
+**[View Full System Design Documentation](./BACKEND_DESIGN_DOCUMENTATION.md)**
 
 ---
 
